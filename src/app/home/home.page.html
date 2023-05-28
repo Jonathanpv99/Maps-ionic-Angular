@@ -1,20 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Ionic Maps </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <div class="container">
+    <capacitor-google-map #map></capacitor-google-map>
   </div>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar class="ion-text-center">
+    <ion-button (click)="locateMe()" fill="clear">
+      <ion-icon name="locate-outline" slot="start"></ion-icon>
+      Locate me!</ion-button>
+  </ion-toolbar>
+</ion-footer>
