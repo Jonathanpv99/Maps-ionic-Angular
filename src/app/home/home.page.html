@@ -2,6 +2,14 @@
   <ion-toolbar>
     <ion-title> Ionic Maps </ion-title>
   </ion-toolbar>
+  <form (ngSubmit)="enviarInformacion()">
+    <ion-item>
+      <ion-label>Información:</ion-label>
+      <ion-input [(ngModel)]="informacion" name="informacion"></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit">Enviar</ion-button>
+  </form>
+
 </ion-header>
 
 <ion-content>
@@ -11,9 +19,15 @@
 </ion-content>
 
 <ion-footer>
+  <p *ngIf="isOnline">El dispositivo está en línea</p>
+  <p *ngIf="!isOnline">El dispositivo está sin conexión</p>
   <ion-toolbar class="ion-text-center">
     <ion-button (click)="locateMe()" fill="clear">
       <ion-icon name="locate-outline" slot="start"></ion-icon>
       Locate me!</ion-button>
+      <ion-button  (click)="takephoto()"fill="clear">Photo</ion-button>
+      <ion-button  (click)="OpenBrowser()"fill="clear">Navegador</ion-button>
+      <ion-button  (click)="vibrate()"fill="clear">vibrar</ion-button>
+      <ion-button  (click)="showToast()"fill="clear">toast</ion-button>
   </ion-toolbar>
 </ion-footer>
